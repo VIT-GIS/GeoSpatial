@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoSpatial CLUB</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    <script src="script.js" defer></script>
+
+    <div class="menu">
+        <div class="logo">
+            <img src="../assets/logo.jpeg.jpg" alt="GIS Club Logo">
+            <span>GeoSpatial CLUB</span>
+        </div>
+        <div class="button1">
+            <a href="../dashboard.html/index.html">
+                <button>Go Back</button>
+              </a>
+              
+            
+        </div>
+        <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    </div>
+
+    <div class="menu-slider" id="menuSlider">
+        <a href="../dashboard.html/index.html">
+            <button>Go Back</button>
+          </a>
+    </div>
+
+    
+
+    <img src="../assets/gisimage.jpg" alt="Main GIS Image" class="main-image">
+
+    <section id="section1">
+        <h2>Geographic Information System</h2>
+        <p>
+            A geographic information system (GIS) consists of various tools that allow us to analyze spatial data.
+            <img src="../assets/Fig_4.4.svg.png" alt="Figure 4.4" class="wrapped-img">
+        </p>
+    </section>
+
+    <section id="section2">
+        <h2>GIS Software</h2>
+        <p>
+            GIS software supports storing, retrieving, and visualizing spatial data for analysis.
+            <img src="../assets/Snow-cholera-map.jpg" alt="Snow Cholera Map" class="wrapped-img">
+        </p>
+    </section>
+
+    <section id="section3">
+        <h2>Geospatial Data Management</h2>
+        <p>
+            The core of any GIS is a database that contains spatially referenced data used for mapping and analysis.
+        </p>
+    </section>
+
+    <section id="section4">
+        <h2>Completeness</h2>
+        <p>
+            The degree to which a data set represents all of the actual phenomena it is intended to represent.
+        </p>
+    </section>
+
+    <section id="section5">
+        <h2>Currency</h2>
+        <p>
+            The most recent point in time at which a data set is still considered valid.
+        </p>
+    </section>
+
+    <section id="section6">
+        <h2>Raster-to-Vector Translation</h2>
+        <p>
+            This process converts raster data into vector data, allowing for more precise spatial analysis.
+        </p>
+    </section>
+
+    <section id="section7">
+        <h2>Spatial ETL</h2>
+        <p>
+            Spatial ETL tools support extracting, transforming, and loading spatial data between various GIS platforms.
+        </p>
+    </section>
+
+    
+
+    <footer >
+        <p class="color">2024 GIS Company. All rights reserved.GIS Club | VIT University</p>
+    </footer>
+
+    <div class="chatbot" onclick="openChat()">💬</div>
+
+    <div class="chat-popup" id="chatPopup">
+        <header>Good Evening! Welcome to the GIS Site</header>
+        <div class="content" id="chatContent">
+            <p>Hii! It's GIS CLUB messaging assistant again.</p>
+            <p>Is this what you need help with?</p>
+            <div class="response-options">
+                <button onclick="showOptions('No')">No, something else</button>
+                <button onclick="confirmYes()">Yes, that's correct</button>
+            </div>
+        </div>
+        <input type="text" id="userInput" placeholder="Type your message here..." style="display: none;">
+        <button onclick="sendMessage()" style="display: none;">Send</button>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const slider = document.getElementById('menuSlider');
+            slider.style.display = slider.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function openChat() {
+            const popup = document.getElementById('chatPopup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function showOptions(response) {
+            const content = document.getElementById('chatContent');
+            content.innerHTML = `<p>So, what can I help you with?</p>
+                <ol>
+                    <li><button onclick="navigateTo('chairperson.html')">Option A: I want to meet the chairperson</button></li>
+                    <li><button onclick="navigateTo('resources.html')">Option B: I need help with GIS resources</button></li>
+                    <li><button onclick="navigateTo('join.html')">Option C: I want to join the GIS Club</button></li>
+                </ol>`;
+        }
+
+        function confirmYes() {
+            const content = document.getElementById('chatContent');
+            content.innerHTML = '<p>Great! Let us know if you have any further queries.</p>';
+        }
+
+        function navigateTo(page) {
+            const now = new Date();
+            const istTime = new Date(now.getTime() + (330 * 60000)); // Convert to IST
+            alert(`Current IST: ${istTime.toLocaleString()}`);
+            window.location.href = page;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const content = document.getElementById('chatContent');
+
+            if (input.value.trim() !== '') {
+                const userMsg = document.createElement('p');
+                userMsg.textContent = `You: ${input.value}`;
+                content.appendChild(userMsg);
+
+                const botMsg = document.createElement('p');
+                botMsg.textContent = `Bot: Thank you for your response. We will get back to you soon!`;
+                content.appendChild(botMsg);
+
+                input.value = '';
+                content.scrollTop = content.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
