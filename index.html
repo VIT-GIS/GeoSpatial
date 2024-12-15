@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoSpatial CLUB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../assets/logo.jpeg.jpg" type="image/x-icon">
+    
+</head>
+<body>
+    <div class="menu">
+        <div class="logo">
+            <img src="../assets/logo.jpeg.jpg" alt="GIS Club Logo">
+            <span>GeoSpatial VIT</span>
+        </div>
+        <div class="button1">
+            <a href="../Login page/index.html">
+                <button>VITian Login</button>
+            </a>
+            <a href="../About Us/index.html">
+                <button>Meet Our Board</button>
+            </a>
+        </div>
+        <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    </div>
+
+    <div class="menu-slider" id="menuSlider">
+        <a href="../Login page/index.html"><button>VITian Login</button></a>
+        <a href="../About Us/index.html"><button>Meet Our Board</button></a>
+    </div>
+    
+
+    <img src="./assets/mainpic.png" alt="mainpic">
+    <section>
+        <h2>About the GIS Club</h2>
+        <p>The GIS Club focuses on leveraging geospatial technologies to address disaster-related challenges while fostering a culture of innovation and collaboration. We:</p>
+        <ul>
+            <li>Develop cutting-edge GIS tools for disaster preparedness, risk mitigation, and recovery efforts.</li>
+            <li>Build intuitive web-based GIS interfaces to enhance community awareness and engagement.</li>
+            <li>Collaborate with industries to implement real-world GIS solutions.</li>
+            <li>Organize skill-building initiatives to equip students and community members with GIS expertise.</li>
+            <li>Innovate solutions through hackathons and brainstorming sessions.</li>
+            <li>Conduct outreach programs to educate communities on disaster management strategies.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Purpose of the Club</h2>
+        <ul>
+            <li>Develop GIS-based solutions to mitigate and respond to disasters.</li>
+            <li>Equip students and communities with GIS tools for disaster awareness.</li>
+            <li>Collaborate with CDMM to advance GIS technologies.</li>
+            <li>Enhance public disaster preparedness through outreach programs.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>GIS, NDMM School of VIT, and CDMM</h2>
+        <p>The NDMM (National Disaster Mitigation and Management) School at VIT collaborates with the GIS Club to develop innovative disaster management solutions. CDMM (Center for Disaster Mitigation and Management) further supports these efforts with cutting-edge research and expertise in geospatial technologies.</p>
+    </section>
+
+    <section>
+        <h2>Activities</h2>
+        <ul>
+            <li><strong>Brainstorming Sessions:</strong> Idea-sharing meetings to explore GIS solutions for disaster challenges.</li>
+            <li><strong>Guest Lectures:</strong> Hosting experts to share insights on geospatial technologies.</li>
+            <li><strong>Hackathons:</strong> Tech-driven events focused on GIS themes like flood mapping and emergency response.</li>
+            <li><strong>Workshops:</strong> Training sessions on GIS tools (e.g., QGIS, ArcGIS) using disaster case studies.</li>
+            <li><strong>Industry Collaboration:</strong> Partnering with GIS companies for mentorship and project development.</li>
+            <li><strong>Mock Activities:</strong> Simulating disaster scenarios to test GIS-based solutions.</li>
+            <li><strong>ISRO Outreach:</strong> Collaborating with ISRO’s IIRS for specialized workshops.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Vision of the Club</h2>
+        <p>To establish the GIS Club as a premier geospatial technology hub empowering students and communities to tackle disaster challenges through innovative solutions, strategic collaborations, and impactful outreach programs. Our vision is to build a resilient society equipped with cutting-edge GIS tools and technologies.</p>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>The GIS Club at VIT aims to pioneer the integration of GIS technologies into disaster resilience efforts. By utilizing VIT’s resources, fostering industry collaborations, and driving innovation, the club contributes significantly to disaster management advancements.</p>
+    </section>
+
+    
+
+    <footer >
+        <p class="color">2024 GIS Company. All rights reserved.GIS Club | VIT University</p>
+    </footer>
+
+    <div class="chatbot" onclick="openChat()">💬</div>
+
+    <div class="chat-popup" id="chatPopup">
+        <header>Good Evening! Welcome to the GIS Site</header>
+        <div class="content" id="chatContent">
+            <p>Hii! It's GIS CLUB messaging assistant again.</p>
+            <p>Is this what you need help with?</p>
+            <div class="response-options">
+                <button onclick="showOptions('No')">No, something else</button>
+                <button onclick="confirmYes()">Yes, that's correct</button>
+            </div>
+        </div>
+        <input type="text" id="userInput" placeholder="Type your message here..." style="display: none;">
+        <button onclick="sendMessage()" style="display: none;">Send</button>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const slider = document.getElementById('menuSlider');
+            slider.style.display = slider.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function openChat() {
+            const popup = document.getElementById('chatPopup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function showOptions(response) {
+            const content = document.getElementById('chatContent');
+            content.innerHTML = `<p>So, what can I help you with?</p>
+                <ol>
+                    <li><button onclick="navigateTo('chairperson.html')">Option A: I want to meet the chairperson</button></li>
+                    <li><button onclick="navigateTo('https://www.giscloud.com/blog/')">Option B: I need help with GIS resources</button></li>
+                    <li><button onclick="navigateTo('https://form.geospatialvit.site/')">Option C: I want to join the GIS Club</button></li>
+                </ol>`;
+        }
+
+        function confirmYes() {
+            const content = document.getElementById('chatContent');
+            content.innerHTML = '<p>Great! Let us know if you have any further queries.</p>';
+        }
+
+        function navigateTo(page) {
+            const now = new Date();
+            const istTime = new Date(now.getTime() + (330 * 60000)); // Convert to IST
+            alert(`Current IST: ${istTime.toLocaleString()}`);
+            window.location.href = page;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const content = document.getElementById('chatContent');
+
+            if (input.value.trim() !== '') {
+                const userMsg = document.createElement('p');
+                userMsg.textContent = `You: ${input.value}`;
+                content.appendChild(userMsg);
+
+                const botMsg = document.createElement('p');
+                botMsg.textContent = `Bot: Thank you for your response. We will get back to you soon!`;
+                content.appendChild(botMsg);
+
+                input.value = '';
+                content.scrollTop = content.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
