@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoSpatial VIT</title>
+    <link rel="stylesheet" href="../Login page/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <img src="../assets/logo.jpeg.jpg" alt="GIS Logo">
+            </div>
+            <h1>GeoSpatial VIT</h1>
+        </div>
+        <div class="header-nav">
+            <a href="index.html" class="back-btn">Go Back</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navigation Buttons -->
+        <div class="form-toggle">
+            <button id="loginBtn" class="toggle-btn">Login</button>
+            <button id="registerBtn" class="toggle-btn">New Registration</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="loginForm" class="form">
+            <h2>Login</h2>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button id="loginSubmit" class="submit-btn">Login</button>
+            <a href="../forgot password/index.html" class="forgot-password">Forgot Password?</a>
+        </div>
+        
+
+        <!-- Registration Form -->
+        <div id="registerForm" class="form hidden">
+            <h2>Register</h2>
+            <input type="text" id="regName" placeholder="Full Name" required>
+            <input type="email" id="regEmail" placeholder="Email (vit.ac.in / vitstudent.ac.in)" required>
+            <input type="text" id="regPhone" placeholder="Phone Number" required>
+            <input type="text" id="regRegNum" placeholder="Registration Number" required>
+            <input type="file" id="profilePic" accept="image/*" required>
+            <input type="password" id="regPassword" placeholder="Password" required>
+            <button id="registerSubmit" class="submit-btn">Register</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 GIS Company. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../Login page/scripts.js"></script>
+</body>
+
+</html>
