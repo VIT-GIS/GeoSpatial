@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+/* From Uiverse.io by Madflows */ 
+.button {
+    position: relative;
+    height: 3rem;
+    
+    border-radius: 1.5rem;
+    background: #3d3a4e;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: absolute; /* Makes the button position relative to the nearest positioned ancestor */
+    top: 10px; /* Adjust this value to move the button vertically */
+    right: 10px; /* Adjust this value to move the button horizontally */
+    padding: 0.5rem 1rem; /* Button padding for better appearance */
+    background-color: #010101; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; 
+  }
+  
+  .button:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .button-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+      82.3deg,
+      rgba(150, 93, 233, 1) 10.8%,
+      rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
+  }
+  
+
+
+
+.upper img {
+
+        display: block;
+        width: 100%;
+        height: auto;
+}
+
+header {
+    background: #004080;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+header img {
+    max-width: 100%;
+    bottom: -100;
+    margin: 90 60 auto;
+    display:flex;
+}html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+section {
+    margin-bottom: 2rem;
+}
+h1, h2 {
+    color:white;
+}
+.vision, .mission {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-left: 4px solid #004080;
+    margin-top: 1rem;
+}
+footer {
+    background: #f1f1f1;
+    color: #333;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+.explore-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #004080;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.explore-link:hover {
+    background: #003366;
+}
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+        padding: 1rem;
+    }
+    header, footer {
+        text-align: center;
+        padding: 1rem;
+    }
+    .explore-link {
+        padding: 0.5rem;
+        font-size: 14px;
+    }
+}
