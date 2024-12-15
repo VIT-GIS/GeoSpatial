@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../dashboard.html/styles.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="../assets/logo.jpeg.jpg" alt="GIS Logo" class="logo">
+            <h1 class="company-name">GIS Company</h1>
+        </div>
+        <div>
+            <button class="menu-btn" id="menu-btn">Menu</button>
+        </div>
+
+        <div class="user-details">
+            <img src="user-placeholder.png" alt="User Photo" class="user-photo" id="userPhoto">
+            <span id="userName" class="user-name">User Name</span>
+            <div class="dropdown">
+                <button class="dropdown-btn">&#x25BC;</button>
+                <div class="dropdown-content">
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <h3>Menu</h3>
+        <ul>
+           <li><a href="../Dashboard/index.html">Dashboard</a></li>
+           <li><a href="../user chatting/index.html">chat</a></li>
+           <li><a href="../profile/index.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-content">
+        <h2>Welcome to the Dashboard</h2>
+        <p>Explore the features and tools provided by GIS Company.</p>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 GIS Company. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../dashboard.html/scripts.js"></script>
+    <script type="module" src="../dashboard.html/location.js" ></script>
+    <script>
+        // Mobile menu and filter functionality
+        document.getElementById('menu-btn').onclick = function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        };
+
+        document.getElementById('close-btn').onclick = function () {
+            document.getElementById('sidebar').classList.remove('active');
+        };
+    </script>
+</body>
+
+</html>

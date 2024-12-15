@@ -1,0 +1,250 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    position: relative; /* Ensure menu button stays within header */
+}
+
+header img#logo {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px; /* Adds space between the logo and title */
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    padding-left: 2px;
+    white-space: nowrap;
+}
+
+/* Profile Container */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #0046ad;
+    margin-bottom: 20px;
+}
+
+.profile-details {
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 400px;
+}
+
+.profile-details h2, .profile-details p {
+    margin: 10px 0;
+    word-wrap: break-word;
+}
+
+/* QR Code */
+#qrCode {
+    display: flex;
+    justify-content: center; /* Center the QR code */
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2px;
+    background-color: #000000;
+    color: white;
+    position: fixed;
+    bottom: -10px;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 60px;
+    color: #e0e0e0;
+    transition: left 0.4s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+.sidebar .close-btn:hover {
+    color: #ff6666;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 12px 25px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #41464b;
+}
+
+.sidebar ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar ul li a:hover {
+    color: #ffffff;
+}
+
+/* Menu Button */
+.menu-btn {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    font-size: 1rem; /* Font size */
+    padding: 10px 15px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: absolute; /* Absolute positioning within header */
+    top: 50%; /* Vertically center */
+    right: 20px; /* Adjust right position */
+    transform: translateY(-50%); /* Vertically center the button */
+    z-index: 1100; /* Ensure it's above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Menu Button Hover Effect */
+.menu-btn:hover {
+    background-color: #adadad; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Menu Button Active (when sidebar is open) */
+.menu-btn.active {
+    background-color: #444; /* Change color when active */
+    transform: scale(1.05); /* Slightly enlarge when active */
+}
+
+/* Responsive Design for smaller screens (Mobile) */
+@media (max-width: 768px) {
+    /* Adjust the position of the button for mobile */
+    .menu-btn {
+        top: 50%; /* Vertically center */
+        right: 15px; /* Bring closer to the right edge */
+        font-size: 0.9rem; /* Smaller font size */
+        padding: 8px 12px; /* Smaller padding */
+    }
+}
+
+@media (max-width: 390px) {
+    /* Further adjustments for very small screens (e.g., iPhone 12) */
+    .menu-btn {
+        right: 10px; /* Move button even closer to the right edge */
+        top: 50%; /* Vertically center */
+        font-size: 1.2rem; /* Slightly bigger font size for smaller screens */
+        padding: 6px 10px; /* Adjust padding */
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    .profile-details {
+        padding: 15px;
+    }
+
+    .profile-pic img {
+        width: 120px;
+        height: 120px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: row; /* Ensure logo and name are side by side */
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+    }
+
+    header img#logo {
+        height: 40px;
+        width: 40px;
+        margin-right: 10px; /* Adds space between the logo and title */
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    .profile-details {
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
