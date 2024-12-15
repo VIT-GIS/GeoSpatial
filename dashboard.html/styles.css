@@ -252,3 +252,66 @@ footer {
         padding: 6px 10px; /* Adjust padding */
     }
 }
+
+/* Notice Container Styles */
+.notice-container {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.notice-container h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.notice-container h2 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.notice-container p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.notice-container span {
+    display: block;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Responsive Design for iPhone 12 */
+@media (max-width: 390px) {
+    .notice-container {
+        padding: 15px;
+        margin: 10px;
+        border-radius: 8px;
+    }
+
+    .notice-container h3 {
+        font-size: 1.3rem;
+    }
+
+    .notice-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .notice-container p {
+        font-size: 0.9rem;
+    }
+
+    .notice-container span {
+        font-size: 0.8rem;
+    }
+}
