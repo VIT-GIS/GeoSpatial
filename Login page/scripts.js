@@ -1,1 +1,158 @@
-const _0x366a96=_0x396a;(function(_0x42a555,_0x9b9e78){const _0x198b50=_0x396a,_0x225f45=_0x42a555();while(!![]){try{const _0x217fcc=-parseInt(_0x198b50(0xc7))/0x1+parseInt(_0x198b50(0xe5))/0x2+parseInt(_0x198b50(0xc0))/0x3+parseInt(_0x198b50(0xcb))/0x4*(-parseInt(_0x198b50(0xe7))/0x5)+parseInt(_0x198b50(0xd9))/0x6*(-parseInt(_0x198b50(0xbf))/0x7)+-parseInt(_0x198b50(0xf3))/0x8*(-parseInt(_0x198b50(0xdc))/0x9)+parseInt(_0x198b50(0xd0))/0xa;if(_0x217fcc===_0x9b9e78)break;else _0x225f45['push'](_0x225f45['shift']());}catch(_0x24ad5a){_0x225f45['push'](_0x225f45['shift']());}}}(_0x1d56,0x54de3));function _0x1d56(){const _0x395c4e=['47851VObOJM','Error\x20sending\x20verification\x20email:\x20','vitgis-ba14f.appspot.com','signOut','1453868LpZPIY','emailVerified','loginForm','auth/user-not-found','@vitstudent.ac.in','2609730xAdYwG','endsWith','profilePic','regRegNum','catch','regPhone','hidden','onerror','value','810BcVXTI','code','location','4368699JWqlBx','@vit.ac.in','This\x20email\x20is\x20already\x20registered.\x20Please\x20login\x20or\x20use\x20a\x20different\x20email.','An\x20unexpected\x20error\x20occurred.\x20Please\x20try\x20again\x20later.','loginSubmit','classList','Login\x20Successful','regEmail','remove','377800tNgQdK','registerSubmit','5ybWoom','Please\x20verify\x20your\x20email\x20before\x20logging\x20in.','result','loginToggle','loginPassword','Login\x20Failed:\x20','1:759209581914:web:3432c0511eba57eca66763','Error\x20saving\x20user\x20data:\x20','../dashboard.html','addEventListener','auth/weak-password','href','8JOdAQk','files','vitgis-ba14f.firebaseapp.com','add','Incorrect\x20password.\x20Please\x20try\x20again.','regPassword','Your\x20password\x20is\x20too\x20weak.\x20Please\x20use\x20a\x20stronger\x20password.','registerForm','then','VITians','getElementById','click','No\x20account\x20found\x20with\x20this\x20email.\x20Please\x20register\x20first.','Invalid\x20email\x20address.\x20Please\x20check\x20and\x20try\x20again.','This\x20account\x20has\x20been\x20disabled.\x20Please\x20contact\x20support.','32081RJxbmu','1327074swXQJk','regName','auth/invalid-email','registerToggle','user','auth/email-already-in-use','onloadend'];_0x1d56=function(){return _0x395c4e;};return _0x1d56();}import{initializeApp}from'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';import{getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,sendEmailVerification,onAuthStateChanged}from'https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js';import{getFirestore,doc,setDoc}from'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';function _0x396a(_0x32a50f,_0x2e0479){const _0x1d5694=_0x1d56();return _0x396a=function(_0x396aa0,_0x1591d4){_0x396aa0=_0x396aa0-0xbe;let _0xe92dc0=_0x1d5694[_0x396aa0];return _0xe92dc0;},_0x396a(_0x32a50f,_0x2e0479);}const firebaseConfig={'apiKey':'AIzaSyCvg1AhjEd9vIiYWgqQlI5BO0jU3AF84t8','authDomain':_0x366a96(0xf5),'projectId':'vitgis-ba14f','storageBucket':_0x366a96(0xc9),'messagingSenderId':'759209581914','appId':_0x366a96(0xed)},app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),getErrorMessage=_0x2ecf87=>{const _0x2806b3=_0x366a96;switch(_0x2ecf87){case _0x2806b3(0xc2):return _0x2806b3(0x100);case'auth/user-disabled':return _0x2806b3(0xbe);case _0x2806b3(0xce):return _0x2806b3(0xff);case'auth/wrong-password':return _0x2806b3(0xf7);case _0x2806b3(0xc5):return _0x2806b3(0xde);case _0x2806b3(0xf1):return _0x2806b3(0xf9);default:return _0x2806b3(0xdf);}};document[_0x366a96(0xf0)]('DOMContentLoaded',()=>{const _0x88e587=_0x366a96,_0x39bac5=document[_0x88e587(0xfd)](_0x88e587(0xea)),_0x26d776=document[_0x88e587(0xfd)](_0x88e587(0xc3)),_0x17af27=document[_0x88e587(0xfd)](_0x88e587(0xcd)),_0x3dc452=document[_0x88e587(0xfd)](_0x88e587(0xfa)),_0xa688a6=document[_0x88e587(0xfd)](_0x88e587(0xe0)),_0x13091c=document['getElementById'](_0x88e587(0xe6));_0x39bac5&&_0x39bac5[_0x88e587(0xf0)](_0x88e587(0xfe),()=>{const _0x1bbc25=_0x88e587;_0x17af27['classList'][_0x1bbc25(0xe4)]('hidden'),_0x3dc452[_0x1bbc25(0xe1)][_0x1bbc25(0xf6)]('hidden');}),_0x26d776&&_0x26d776[_0x88e587(0xf0)]('click',()=>{const _0xde1d60=_0x88e587;_0x3dc452['classList'][_0xde1d60(0xe4)]('hidden'),_0x17af27[_0xde1d60(0xe1)][_0xde1d60(0xf6)](_0xde1d60(0xd6));}),_0xa688a6&&_0xa688a6[_0x88e587(0xf0)](_0x88e587(0xfe),()=>{const _0x34327d=_0x88e587,_0x4fab35=document[_0x34327d(0xfd)]('loginEmail')[_0x34327d(0xd8)],_0x3544db=document[_0x34327d(0xfd)](_0x34327d(0xeb))[_0x34327d(0xd8)];signInWithEmailAndPassword(auth,_0x4fab35,_0x3544db)[_0x34327d(0xfb)](_0xade89c=>{const _0x2f3222=_0x34327d,_0x3c7969=_0xade89c['user'];!_0x3c7969[_0x2f3222(0xcc)]?(alert(_0x2f3222(0xe8)),auth[_0x2f3222(0xca)]()):(alert(_0x2f3222(0xe2)),window[_0x2f3222(0xdb)][_0x2f3222(0xf2)]=_0x2f3222(0xef));})[_0x34327d(0xd4)](_0x5a856a=>{const _0x51a20b=_0x34327d,_0x7c19ab=getErrorMessage(_0x5a856a[_0x51a20b(0xda)]);alert(_0x51a20b(0xec)+_0x7c19ab);});}),_0x13091c&&_0x13091c[_0x88e587(0xf0)](_0x88e587(0xfe),()=>{const _0x5a246a=_0x88e587,_0x3c8f46=document['getElementById'](_0x5a246a(0xc1))[_0x5a246a(0xd8)],_0xfce400=document['getElementById'](_0x5a246a(0xe3))['value'],_0x4a49b9=document[_0x5a246a(0xfd)](_0x5a246a(0xd5))[_0x5a246a(0xd8)],_0xc5c4ef=document[_0x5a246a(0xfd)](_0x5a246a(0xd3))['value'],_0x8b745=document[_0x5a246a(0xfd)](_0x5a246a(0xd2))[_0x5a246a(0xf4)][0x0],_0x2f3e04=document[_0x5a246a(0xfd)](_0x5a246a(0xf8))[_0x5a246a(0xd8)];if(!_0xfce400['endsWith'](_0x5a246a(0xdd))&&!_0xfce400[_0x5a246a(0xd1)](_0x5a246a(0xcf))){alert('Please\x20use\x20a\x20valid\x20VIT\x20email\x20address');return;}const _0x488f83=new FileReader();_0x488f83['readAsDataURL'](_0x8b745),_0x488f83[_0x5a246a(0xc6)]=()=>{const _0x416d0f=_0x5a246a,_0x1b5d4d=_0x488f83[_0x416d0f(0xe9)];createUserWithEmailAndPassword(auth,_0xfce400,_0x2f3e04)['then'](_0x1d13ee=>{const _0xb659e9=_0x416d0f,_0x52a3f2=_0x1d13ee[_0xb659e9(0xc4)],_0x44c550=doc(db,_0xb659e9(0xfc),_0x52a3f2['uid']);setDoc(_0x44c550,{'name':_0x3c8f46,'email':_0xfce400,'phone':_0x4a49b9,'regNum':_0xc5c4ef,'profilePic':_0x1b5d4d})[_0xb659e9(0xfb)](()=>{const _0xdfdea5=_0xb659e9;sendEmailVerification(_0x52a3f2)[_0xdfdea5(0xfb)](()=>{alert('Verification\x20email\x20sent.\x20Please\x20check\x20your\x20inbox.');})[_0xdfdea5(0xd4)](_0x2951e5=>{const _0xa558b6=_0xdfdea5,_0x40a9e6=getErrorMessage(_0x2951e5['code']);alert(_0xa558b6(0xc8)+_0x40a9e6);});})['catch'](_0x5ae5ff=>{const _0x4c5389=_0xb659e9,_0x8377ac=getErrorMessage(_0x5ae5ff[_0x4c5389(0xda)]);alert(_0x4c5389(0xee)+_0x8377ac);});})[_0x416d0f(0xd4)](_0x9285a=>{const _0x2dc9d7=_0x416d0f,_0x523117=getErrorMessage(_0x9285a[_0x2dc9d7(0xda)]);alert('Registration\x20Failed:\x20'+_0x523117);});},_0x488f83[_0x5a246a(0xd7)]=()=>{alert('Failed\x20to\x20read\x20profile\x20picture\x20file.');};});});
+// Import Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+// Firebase Configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCvg1AhjEd9vIiYWgqQlI5BO0jU3AF84t8",
+    authDomain: "vitgis-ba14f.firebaseapp.com",
+    projectId: "vitgis-ba14f",
+    storageBucket: "vitgis-ba14f.appspot.com",
+    messagingSenderId: "759209581914",
+    appId: "1:759209581914:web:3432c0511eba57eca66763"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// Map Firebase error codes to user-friendly messages
+const getErrorMessage = (errorCode) => {
+    switch (errorCode) {
+        case "auth/invalid-email":
+            return "Invalid email address. Please check and try again.";
+        case "auth/user-disabled":
+            return "This account has been disabled. Please contact support.";
+        case "auth/user-not-found":
+            return "No account found with this email. Please register first.";
+        case "auth/wrong-password":
+            return "Incorrect password. Please try again.";
+        case "auth/email-already-in-use":
+            return "This email is already registered. Please login or use a different email.";
+        case "auth/weak-password":
+            return "Your password is too weak. Please use a stronger password.";
+        default:
+            return "An unexpected error occurred. Please try again later.";
+    }
+};
+
+// Wait for DOM to load
+document.addEventListener("DOMContentLoaded", () => {
+    const loginToggle = document.getElementById('loginToggle');
+    const registerToggle = document.getElementById('registerToggle');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const loginSubmit = document.getElementById('loginSubmit');
+    const registerSubmit = document.getElementById('registerSubmit');
+
+    // Toggle between Login and Register Form
+    if (loginToggle) {
+        loginToggle.addEventListener('click', () => {
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+        });
+    }
+
+    if (registerToggle) {
+        registerToggle.addEventListener('click', () => {
+            registerForm.classList.remove('hidden');
+            loginForm.classList.add('hidden');
+        });
+    }
+
+    // Login Functionality
+    if (loginSubmit) {
+        loginSubmit.addEventListener('click', () => {
+            loginSubmit.disabled = true; // Disable the button
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    if (!user.emailVerified) {
+                        alert('Please verify your email before logging in.');
+                        auth.signOut();
+                    } else {
+                        alert('Login Successful');
+                        window.location.href = '../dashboard.html';
+                    }
+                })
+                .catch((error) => {
+                    const errorMessage = getErrorMessage(error.code);
+                    alert('Login Failed: ' + errorMessage);
+                })
+                .finally(() => {
+                    loginSubmit.disabled = false; // Re-enable the button
+                });
+        });
+    }
+
+    // Register Functionality
+    if (registerSubmit) {
+        registerSubmit.addEventListener('click', () => {
+            registerSubmit.disabled = true; // Disable the button
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const phone = document.getElementById('regPhone').value;
+            const regNum = document.getElementById('regRegNum').value;
+            const profilePic = document.getElementById('profilePic').files[0];
+            const password = document.getElementById('regPassword').value;
+
+            if (!email.endsWith('@vit.ac.in') && !email.endsWith('@vitstudent.ac.in')) {
+                alert('Please use a valid VIT email address');
+                registerSubmit.disabled = false; // Re-enable the button
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.readAsDataURL(profilePic);
+
+            reader.onloadend = () => {
+                const base64Image = reader.result;
+
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+
+                        const userDocRef = doc(db, "VITians", user.uid);
+                        setDoc(userDocRef, {
+                            name,
+                            email,
+                            phone,
+                            regNum,
+                            profilePic: base64Image
+                        })
+                        .then(() => {
+                            sendEmailVerification(user)
+                                .then(() => {
+                                    alert('Verification email sent. Please check your inbox.');
+                                })
+                                .catch((error) => {
+                                    const errorMessage = getErrorMessage(error.code);
+                                    alert('Error sending verification email: ' + errorMessage);
+                                });
+                        })
+                        .catch((error) => {
+                            const errorMessage = getErrorMessage(error.code);
+                            alert('Error saving user data: ' + errorMessage);
+                        });
+                    })
+                    .catch((error) => {
+                        const errorMessage = getErrorMessage(error.code);
+                        alert('Registration Failed: ' + errorMessage);
+                    })
+                    .finally(() => {
+                        registerSubmit.disabled = false; // Re-enable the button
+                    });
+            };
+
+            reader.onerror = () => {
+                alert('Failed to read profile picture file.');
+                registerSubmit.disabled = false; // Re-enable the button
+            };
+        });
+    }
+});
