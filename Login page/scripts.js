@@ -63,6 +63,9 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         alert("Login successful!");
+
+        // Redirect to dashboard or another page after successful login
+        window.location.href = "/dashboard.html";  // Replace with the URL of your desired page
     } catch (error) {
         alert("Error: " + error.message);
     } finally {
@@ -82,7 +85,6 @@ document.getElementById("registration-form").addEventListener("submit", async (e
     const regNumber = document.getElementById("reg-number").value;
     const phone = document.getElementById("phone").value;
     const profilePic = document.getElementById("profile-pic").files[0];
-    const timestamp = new Date();
 
     if (!isAllowedDomain(email)) {
         alert("Error: Only VIT emails are allowed.");
@@ -91,6 +93,9 @@ document.getElementById("registration-form").addEventListener("submit", async (e
     }
 
     try {
+        // Convert profile picture to base64 string
+        const base64ProfilePic = await convertToBase64(profilePic);
+
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
@@ -102,7 +107,8 @@ document.getElementById("registration-form").addEventListener("submit", async (e
             email,
             regNumber,
             phone,
-            timestamp
+            profilePic: base64ProfilePic,  // Save base64 image data
+            timestamp: new Date()
         };
 
         await setDoc(doc(db, "VITians", user.uid), userDoc);
@@ -113,6 +119,16 @@ document.getElementById("registration-form").addEventListener("submit", async (e
         registerBtn.disabled = false;
     }
 });
+
+// Utility function to convert file to base64
+function convertToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
 
 function goBack() {
     window.history.back();
