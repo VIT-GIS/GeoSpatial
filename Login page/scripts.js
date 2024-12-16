@@ -1,9 +1,7 @@
-// Import Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-// Firebase Configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCvg1AhjEd9vIiYWgqQlI5BO0jU3AF84t8",
     authDomain: "vitgis-ba14f.firebaseapp.com",
@@ -15,144 +13,107 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const auth = getAuth();
 const db = getFirestore(app);
 
-// Map Firebase error codes to user-friendly messages
-const getErrorMessage = (errorCode) => {
-    switch (errorCode) {
-        case "auth/invalid-email":
-            return "Invalid email address. Please check and try again.";
-        case "auth/user-disabled":
-            return "This account has been disabled. Please contact support.";
-        case "auth/user-not-found":
-            return "No account found with this email. Please register first.";
-        case "auth/wrong-password":
-            return "Incorrect password. Please try again.";
-        case "auth/email-already-in-use":
-            return "This email is already registered. Please login or use a different email.";
-        case "auth/weak-password":
-            return "Your password is too weak. Please use a stronger password.";
-        default:
-            return "An unexpected error occurred. Please try again later.";
-    }
-};
+// Allowed Email Domains
+const allowedDomains = ["vitstudent.ac.in", "vit.ac.in"];
 
-// Wait for DOM to load
-document.addEventListener("DOMContentLoaded", () => {
-    const loginToggle = document.getElementById('loginToggle');
-    const registerToggle = document.getElementById('registerToggle');
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-    const loginSubmit = document.getElementById('loginSubmit');
-    const registerSubmit = document.getElementById('registerSubmit');
+// Utility Function: Check Email Domain
+function isAllowedDomain(email) {
+    const domain = email.split("@")[1];
+    return allowedDomains.includes(domain);
+}
 
-    // Toggle between Login and Register Form
-    if (loginToggle) {
-        loginToggle.addEventListener('click', () => {
-            loginForm.classList.remove('hidden');
-            registerForm.classList.add('hidden');
-        });
-    }
+// Form Toggles
+const loginToggle = document.getElementById("loginToggle");
+const registerToggle = document.getElementById("registerToggle");
+const loginFormBox = document.getElementById("login-form-box");
+const registrationFormBox = document.getElementById("registration-form-box");
 
-    if (registerToggle) {
-        registerToggle.addEventListener('click', () => {
-            registerForm.classList.remove('hidden');
-            loginForm.classList.add('hidden');
-        });
-    }
+loginToggle.addEventListener("click", () => {
+    loginFormBox.classList.remove("hidden");
+    registrationFormBox.classList.add("hidden");
+    loginToggle.classList.add("active");
+    registerToggle.classList.remove("active");
+});
 
-    // Login Functionality
-    if (loginSubmit) {
-        loginSubmit.addEventListener('click', () => {
-            loginSubmit.disabled = true; // Disable the button
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
+registerToggle.addEventListener("click", () => {
+    registrationFormBox.classList.remove("hidden");
+    loginFormBox.classList.add("hidden");
+    registerToggle.classList.add("active");
+    loginToggle.classList.remove("active");
+});
 
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    const user = userCredential.user;
-                    if (!user.emailVerified) {
-                        alert('Please verify your email before logging in.');
-                        auth.signOut();
-                    } else {
-                        alert('Login Successful');
-                        window.location.href = '../dashboard.html';
-                    }
-                })
-                .catch((error) => {
-                    const errorMessage = getErrorMessage(error.code);
-                    alert('Login Failed: ' + errorMessage);
-                })
-                .finally(() => {
-                    loginSubmit.disabled = false; // Re-enable the button
-                });
-        });
+// Login Form Submission
+document.getElementById("login-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const loginBtn = document.getElementById("login-btn");
+    loginBtn.disabled = true;
+
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    if (!isAllowedDomain(email)) {
+        alert("Error: Only VIT emails are allowed.");
+        loginBtn.disabled = false;
+        return;
     }
 
-    // Register Functionality
-    if (registerSubmit) {
-        registerSubmit.addEventListener('click', () => {
-            registerSubmit.disabled = true; // Disable the button
-            const name = document.getElementById('regName').value;
-            const email = document.getElementById('regEmail').value;
-            const phone = document.getElementById('regPhone').value;
-            const regNum = document.getElementById('regRegNum').value;
-            const profilePic = document.getElementById('profilePic').files[0];
-            const password = document.getElementById('regPassword').value;
-
-            if (!email.endsWith('@vit.ac.in') && !email.endsWith('@vitstudent.ac.in')) {
-                alert('Please use a valid VIT email address');
-                registerSubmit.disabled = false; // Re-enable the button
-                return;
-            }
-
-            const reader = new FileReader();
-            reader.readAsDataURL(profilePic);
-
-            reader.onloadend = () => {
-                const base64Image = reader.result;
-
-                createUserWithEmailAndPassword(auth, email, password)
-                    .then((userCredential) => {
-                        const user = userCredential.user;
-
-                        const userDocRef = doc(db, "VITians", user.uid);
-                        setDoc(userDocRef, {
-                            name,
-                            email,
-                            phone,
-                            regNum,
-                            profilePic: base64Image
-                        })
-                        .then(() => {
-                            sendEmailVerification(user)
-                                .then(() => {
-                                    alert('Verification email sent. Please check your inbox.');
-                                })
-                                .catch((error) => {
-                                    const errorMessage = getErrorMessage(error.code);
-                                    alert('Error sending verification email: ' + errorMessage);
-                                });
-                        })
-                        .catch((error) => {
-                            const errorMessage = getErrorMessage(error.code);
-                            alert('Error saving user data: ' + errorMessage);
-                        });
-                    })
-                    .catch((error) => {
-                        const errorMessage = getErrorMessage(error.code);
-                        alert('Registration Failed: ' + errorMessage);
-                    })
-                    .finally(() => {
-                        registerSubmit.disabled = false; // Re-enable the button
-                    });
-            };
-
-            reader.onerror = () => {
-                alert('Failed to read profile picture file.');
-                registerSubmit.disabled = false; // Re-enable the button
-            };
-        });
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        alert("Login successful!");
+    } catch (error) {
+        alert("Error: " + error.message);
+    } finally {
+        loginBtn.disabled = false;
     }
 });
+
+// Registration Form Submission
+document.getElementById("registration-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const registerBtn = document.getElementById("register-btn");
+    registerBtn.disabled = true;
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const regNumber = document.getElementById("reg-number").value;
+    const phone = document.getElementById("phone").value;
+    const profilePic = document.getElementById("profile-pic").files[0];
+    const timestamp = new Date();
+
+    if (!isAllowedDomain(email)) {
+        alert("Error: Only VIT emails are allowed.");
+        registerBtn.disabled = false;
+        return;
+    }
+
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        await sendEmailVerification(user);
+        alert("Verification email sent. Please verify to proceed.");
+
+        const userDoc = {
+            name,
+            email,
+            regNumber,
+            phone,
+            timestamp
+        };
+
+        await setDoc(doc(db, "VITians", user.uid), userDoc);
+        alert("Registration successful! Verify your email before logging in.");
+    } catch (error) {
+        alert("Error: " + error.message);
+    } finally {
+        registerBtn.disabled = false;
+    }
+});
+
+function goBack() {
+    window.history.back();
+}
