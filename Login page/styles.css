@@ -1,155 +1,164 @@
-/* Global Styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, #e8f5e9, #a5d6a7);
+    color: #333;
 }
 
 /* Header */
 header {
-    background-color: #000000;
+    background-color: #388e3c;
     color: white;
-    padding: 15px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-header .logo-container {
-    display: flex;
-    align-items: center;
-}
-
-header .logo img {
-    width: 50px;
+.logo {
     height: 50px;
-    border-radius: 50%;
     margin-right: 10px;
-    object-fit: cover;
 }
 
-header h1 {
+h1 {
+    font-size: 1.8rem;
     margin: 0;
-    font-size: 24px;
 }
 
-header .header-nav {
-    margin-left: auto;
-}
-
-header .back-btn {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    background: #444;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background 0.3s;
-}
-
-header .back-btn:hover {
-    background: #666;
-}
-
-/* Container */
-.container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-/* Form */
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #153385;
+.go-back-btn {
+    background-color: #1b5e20;
     color: white;
     border: none;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-.submit-btn:hover {
-    background-color: #2b0f8f;
+.go-back-btn:hover {
+    background-color: #2e7d32;
 }
 
-.forgot-password {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    color: #1231df;
-    text-decoration: none;
+/* Main Container */
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-/* Form Toggle */
+/* Form Toggle Buttons */
 .form-toggle {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    gap: 10px;
 }
 
 .toggle-btn {
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
+    background-color: #66bb6a;
+    color: white;
+    border: none;
     padding: 10px 20px;
-    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: #388e3c;
 }
 
 .toggle-btn:hover {
-    background-color: #ddd;
+    background-color: #2e7d32;
 }
 
-.hidden {
+/* Form Styles */
+.form-box {
     display: none;
 }
 
+.form-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2e7d32;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #c8e6c9;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-box button {
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-box button:hover {
+    background-color: #2e7d32;
+}
+
+.form-box .form-group label {
+    font-size: 0.9rem;
+    color: #1b5e20;
+}
+
+.form-box .form-group input {
+    border: 1px solid #81c784;
+}
+
+/* Show Forms Dynamically */
+#login-form-box:not(.hidden),
+#registration-form-box:not(.hidden) {
+    display: block;
+}
+
 /* Footer */
-.footer {
+footer {
     text-align: center;
-    margin-top: 40px;
-    font-size: 14px;
-    color: #777;
+    padding: 10px;
+    background-color: #2e7d32;
+    color: white;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .container {
-        padding: 10px;
+        padding: 15px;
     }
 
-    header h1 {
-        font-size: 20px;
+    header {
+        flex-direction: column;
+        text-align: center;
     }
 
-    header .logo img {
-        width: 40px;
-        height: 40px;
+    .go-back-btn {
+        margin-top: 10px;
+    }
+
+    .form-toggle {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .toggle-btn {
+        width: 100%;
     }
 }
