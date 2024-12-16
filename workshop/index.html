@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Publish Soon</title>
+    <link rel="stylesheet" href="../workshop/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-circle">
+                <img src="../assets/logo.jpeg.jpg" alt="Logo" class="logo">
+            </div>
+            <h1 class="company-name">GeoSpatial</h1>
+        </div>
+        <button class="menu-btn" id="menu-btn">Menu</button>
+    </header>
+
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <h3>Menu</h3>
+        <ul>
+           <li><a href="../dashboard.html/index.html">Dashboard</a></li>
+           <li><a href="../user chatting/index.html">chat</a></li>
+            <li><a href="../cdmm/index.html">CDMM</a></li>
+            <li><a href="../GIS Technology">GID Technology</a></li>
+          <li><a href="../workshop/index.html">WorkShop</a></li>
+            <li><a href="../research/index.html">Research</a></li>
+           <li><a href="../profile/index.html">Profile</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="publish-container">
+            <h2>No Workshop Found</h2>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GeoSpatial. All rights reserved.</p>
+    </footer>
+    <script>
+        // Mobile menu and filter functionality
+        document.getElementById('menu-btn').onclick = function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        };
+
+        document.getElementById('close-btn').onclick = function () {
+            document.getElementById('sidebar').classList.remove('active');
+        };
+    </script>
+</body>
+</html>
