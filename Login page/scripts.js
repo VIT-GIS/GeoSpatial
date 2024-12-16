@@ -1,6 +1,15 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+import { 
+    getAuth, 
+    createUserWithEmailAndPassword, 
+    sendEmailVerification, 
+    signInWithEmailAndPassword 
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import { 
+    getFirestore, 
+    doc, 
+    setDoc 
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCvg1AhjEd9vIiYWgqQlI5BO0jU3AF84t8",
@@ -62,10 +71,18 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        if (!user.emailVerified) {
+            alert("Error: Please verify your email before logging in.");
+            await auth.signOut(); // Sign out the user if email is not verified
+            return;
+        }
+
         alert("Login successful!");
 
         // Redirect to dashboard or another page after successful login
-        window.location.href = "/dashboard.html";  // Replace with the URL of your desired page
+        window.location.href = "/dashboard.html"; // Replace with the URL of your desired page
     } catch (error) {
         alert("Error: " + error.message);
     } finally {
@@ -94,7 +111,7 @@ document.getElementById("registration-form").addEventListener("submit", async (e
 
     try {
         // Convert profile picture to base64 string
-        const base64ProfilePic = await convertToBase64(profilePic);
+        const base64ProfilePic = profilePic ? await convertToBase64(profilePic) : null;
 
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
@@ -107,7 +124,7 @@ document.getElementById("registration-form").addEventListener("submit", async (e
             email,
             regNumber,
             phone,
-            profilePic: base64ProfilePic,  // Save base64 image data
+            profilePic: base64ProfilePic, // Save base64 image data
             timestamp: new Date()
         };
 
@@ -133,3 +150,7 @@ function convertToBase64(file) {
 function goBack() {
     window.history.back();
 }
+
+// Make the function accessible globally
+window.goBack = goBack;
+
