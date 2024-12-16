@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeoSpatial VIT</title>
     <link rel="stylesheet" href="../Login page/styles.css">
-       <link rel="icon" href="../assets/logo.jpeg.jpg" type="image/x-icon">
 </head>
 
 <body>
@@ -18,18 +17,18 @@
             <h1>GeoSpatial VIT</h1>
         </div>
         <div class="header-nav">
-            <a href="https://geospatialvit.site/" class="back-btn">Go Back</a>
+            <a href="index.html" class="back-btn">Go Back</a>
         </div>
     </header>
 
     <div class="container">
         <!-- Navigation Buttons -->
         <div class="form-toggle">
-            <button id="loginBtn" class="toggle-btn">Login</button>
+            <button id="loginToggle" class="toggle-btn">VITian Login</button>
             <a href="https://board.geospatialvit.site/">
-                <button id="loginBtn" class="toggle-btn">Board Access</button>
-              </a>    
-            <button id="registerBtn" class="toggle-btn">New Registration</button>
+                <button id="boardAccess" class="toggle-btn">Board Access</button>
+            </a>
+            <button id="registerToggle" class="toggle-btn">New Registration</button>
         </div>
 
         <!-- Login Form -->
@@ -40,7 +39,6 @@
             <button id="loginSubmit" class="submit-btn">Login</button>
             <a href="../forgot password/index.html" class="forgot-password">Forgot Password?</a>
         </div>
-        
 
         <!-- Registration Form -->
         <div id="registerForm" class="form hidden">
@@ -50,8 +48,7 @@
             <input type="text" id="regPhone" placeholder="Phone Number" required>
             <input type="text" id="regRegNum" placeholder="Registration Number" required>
             <label for="profilePic">Upload your profile picture:</label>
-<input type="file" id="profilePic" accept="image/*" required>
-
+            <input type="file" id="profilePic" accept="image/*" required>
             <input type="password" id="regPassword" placeholder="Password" required>
             <button id="registerSubmit" class="submit-btn">Register</button>
         </div>
