@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile</title>
     <link rel="stylesheet" href="../profile/styles.css">
-        <link rel="icon" href="../assets/logo.jpeg.jpg" type="image/x-icon">
     <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js"></script>
@@ -18,29 +17,19 @@
         <button class="menu-btn" id="menu-btn">Menu</button>
     </header>
     
-        
-    
-
-<!-- Sidebar -->
-<nav class="sidebar" id="sidebar">
-    <button class="close-btn" id="close-btn">&times;</button>
-    <h3>Menu</h3>
-    <ul>
-      <li><a href="../dashboard.html/index.html">Dashboard</a></li>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <h3>Menu</h3>
+        <ul>
+           <li><a href="../dashboard.html/index.html">Dashboard</a></li>
            <li><a href="../user chatting/index.html">chat</a></li>
-            <li><a href="../cdmm/index.html">CDMM</a></li>
-            <li><a href="../GIS Technology/index.html">GID Technology</a></li>
-        <li><a href="../workshop/index.html">WorkShop</a></li>
-            <li><a href="../research/index.html">Research</a></li>
            <li><a href="../profile/index.html">Profile</a></li>
-    </ul>
-</nav>
+        </ul>
+    </nav>
 
     <main>
         <div class="profile-container">
-            <div class="profile-pic">
-                <img id="profilePic" src="" alt="Profile Picture">
-            </div>
             <div class="profile-details">
                 <h2 id="name">Name: </h2>
                 <p id="regNum">Reg No: </p>
@@ -52,11 +41,10 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 GeoSpatial. All rights reserved.</p>
+        <p>&copy; 2024 EasyCab. All rights reserved.</p>
     </footer>
 
     <script type="module" src="../profile/script.js"></script>
-    <script type="module" src="../dashboard.html/location.js" ></script>
     <script>
         // Mobile menu and filter functionality
         document.getElementById('menu-btn').onclick = function () {
@@ -67,7 +55,5 @@
             document.getElementById('sidebar').classList.remove('active');
         };
     </script>
-    <script type="module" src="../dashboard.html/location.js" ></script>
-    <script src="timer.js"></script>
 </body>
 </html>
