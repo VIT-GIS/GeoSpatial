@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="../dashboard.html/styles.css">
-       <link rel="icon" href="../assets/logo.jpeg.jpg" type="image/x-icon">
     <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js"></script>
@@ -17,14 +16,13 @@
     <header class="header">
         <div class="logo-container">
             <img src="../assets/logo.jpeg.jpg" alt="GIS Logo" class="logo">
-            <h1 class="company-name">GeoSpatial Club</h1>
+            <h1 class="company-name">GIS Company</h1>
         </div>
         <div>
             <button class="menu-btn" id="menu-btn">Menu</button>
         </div>
 
         <div class="user-details">
-            <img src="user-placeholder.png" alt="User Photo" class="user-photo" id="userPhoto">
             <span id="userName" class="user-name">User Name</span>
             <div class="dropdown">
                 <button class="dropdown-btn">&#x25BC;</button>
@@ -35,19 +33,18 @@
         </div>
     </header>
 
-
     <!-- Sidebar -->
     <nav class="sidebar" id="sidebar">
         <button class="close-btn" id="close-btn">&times;</button>
         <h3>Menu</h3>
         <ul>
-           <li><a href="../dashboard.html/index.html">Dashboard</a></li>
-           <li><a href="../user chatting/index.html">chat</a></li>
-            <li><a href="../cdmm/index.html">CDMM</a></li>
-            <li><a href="../workshop/index.html">WorkShop</a></li>
-            <li><a href="../GIS Technology">GID Technology</a></li>
-            <li><a href="../research/index.html">Research</a></li>
-           <li><a href="../profile/index.html">Profile</a></li>
+            <li><a href="../dashboard.html/index.html">Dashboard</a></li>
+            <li><a href="../user chatting/index.html">chat</a></li>
+             <li><a href="../cdmm/index.html">CDMM</a></li>
+             <li><a href="../workshop/index.html">WorkShop</a></li>
+             <li><a href="../GIS Technology">GID Technology</a></li>
+             <li><a href="../research/index.html">Research</a></li>
+            <li><a href="../profile/index.html">Profile</a></li>
         </ul>
     </nav>
 
@@ -58,14 +55,13 @@
     </main>
 
     <!-- Notice Container -->
-<div class="notice-container" id="noticeContainer">
-    <h3>Notice</h3>
-    <h2 id="noticeTitle">Notice Title</h2>
-    <p id="noticeContent">Notice Content</p>
-    <span id="noticePostedBy">Posted by: </span>
-    <span id="noticeTime">Time: </span>
-</div>
-
+    <div class="notice-container" id="noticeContainer">
+        <h3>Notice</h3>
+        <h2 id="noticeTitle">Notice Title</h2>
+        <p id="noticeContent">Notice Content</p>
+        <span id="noticePostedBy">Posted by: </span>
+        <span id="noticeTime">Time: </span>
+    </div>
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -73,7 +69,7 @@
     </footer>
 
     <script type="module" src="../dashboard.html/scripts.js"></script>
-    <script type="module" src="../dashboard.html/location.js" ></script>
+    <script type="module" src="../dashboard.html/location.js"></script>
     <script>
         // Mobile menu and filter functionality
         document.getElementById('menu-btn').onclick = function () {
@@ -84,7 +80,6 @@
             document.getElementById('sidebar').classList.remove('active');
         };
     </script>
-    <script src="timer.js"></script>
 </body>
 
 </html>
