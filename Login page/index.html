@@ -18,7 +18,6 @@
     </header>
     <main>
         <div class="container">
-            <!-- Navigation Buttons -->
             <div class="form-toggle">
                 <button id="loginToggle" class="toggle-btn active">VITian Login</button>
                 <a href="https://board.geospatialvit.site/">
@@ -26,30 +25,25 @@
                 </a>
                 <button id="registerToggle" class="toggle-btn">New Registration</button>
             </div>
-            <!-- Login Form -->
+
             <div class="form-box" id="login-form-box">
                 <h2>Login</h2>
                 <form id="login-form">
                     <input type="email" id="login-email" placeholder="Email" required>
                     <input type="password" id="login-password" placeholder="Password" required>
                     <button type="submit" id="login-btn">Login</button>
-                     <a href="../forgot password/index.html" id="ForgotPassword" class="toggle-btn" role="button">Reset Password</a>
+                    <a href="../forgot password/index.html" id="ForgotPassword" class="toggle-btn" role="button">Forgot Password</a>
                 </form>
             </div>
-            <!-- Registration Form -->
+
             <div class="form-box hidden" id="registration-form-box">
                 <h2>Register</h2>
-                <form id="registration-form" enctype="multipart/form-data">
+                <form id="registration-form">
                     <input type="text" id="name" placeholder="Name" required>
                     <input type="email" id="email" placeholder="Email" required>
                     <input type="password" id="password" placeholder="Password" required>
                     <input type="text" id="reg-number" placeholder="Registration Number" required>
                     <input type="tel" id="phone" placeholder="Phone Number" required>
-                    <div class="form-group">
-                        <label for="profile-pic">Upload Your Profile Picture:</label>
-                        <input type="file" id="profile-pic" accept="image/*" required>
-                    </div>
-                
                     <button type="submit" id="register-btn">Register</button>
                 </form>
             </div>
