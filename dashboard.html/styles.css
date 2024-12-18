@@ -3,18 +3,19 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background: linear-gradient(135deg, #3d5afe, #e040fb);
+    color: #ffffff;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #000;
-    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
     padding: 10px 20px;
     position: relative; /* Ensure that the menu button is positioned within the header */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .logo-container {
@@ -46,7 +47,7 @@ header {
 
 .user-name {
     font-size: 1rem;
-    margin-right: 10px;
+    margin-right: 80px;
 }
 
 .dropdown {
@@ -56,7 +57,7 @@ header {
 .dropdown-btn {
     background: none;
     border: none;
-    color: #fff;
+    color: #ffffff;
     font-size: 1rem;
     cursor: pointer;
 }
@@ -66,24 +67,25 @@ header {
     position: absolute;
     top: 30px;
     right: 0;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     overflow: hidden;
     z-index: 10;
 }
 
+
 .dropdown-content a {
     display: block;
     padding: 10px 20px;
-    color: #333;
+    color: #3d5afe;
     text-decoration: none;
     font-size: 0.9rem;
-    background: #f4f4f4;
 }
 
 .dropdown-content a:hover {
-    background: #ddd;
+    background: #e040fb;
+    color: #ffffff;
 }
 
 .dropdown:hover .dropdown-content {
@@ -97,8 +99,8 @@ header {
 
 footer {
     text-align: center;
-    background: #000;
-    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
     padding: 10px 0;
     margin-top: 390px; /* Push footer to bottom of the page */
 }
@@ -140,7 +142,7 @@ footer {
     left: -260px;
     width: 260px;
     height: 100%;
-    background-color: #000000;
+    background: #303f9f;
     padding-top: 60px;
     color: #e0e0e0;
     transition: left 0.4s ease;
@@ -204,58 +206,58 @@ footer {
 
 /* Menu Button */
 .menu-btn {
-    background-color: #ffffff; /* White background */
-    color: #000000; /* Black text */
-    font-size: 1rem; /* Font size */
-    padding: 10px 15px; /* Padding */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    position: absolute; /* Absolute positioning within header */
-    top: 50%; /* Center vertically */
-    right: 235px; /* Adjust from the right edge */
-    transform: translateY(-50%); /* Vertically center the button */
-    z-index: 1100; /* Ensure it's above other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    background: linear-gradient(135deg, #3d5afe, #e040fb);
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 49px;
+    transform: translateY(-50%);
+    z-index: 1100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 /* Menu Button Hover Effect */
 .menu-btn:hover {
-    background-color: #adadad; /* Change background color on hover */
-    transform: scale(1.05); /* Slightly enlarge the button */
+    background: linear-gradient(135deg, #303f9f, #d81b60);
+    transform: scale(1.05);
 }
 
 /* Menu Button Active (when sidebar is open) */
 .menu-btn.active {
-    background-color: #444; /* Change color when active */
-    transform: scale(1.05); /* Slightly enlarge when active */
+    background-color: #444;
+    transform: scale(1.05); 
 }
 
 /* Responsive Design for smaller screens (Mobile) */
 @media (max-width: 768px) {
-    /* Adjust the position of the button for mobile */
+    
     .menu-btn {
-        top: 50%; /* Vertically center */
-        right: 15px; /* Bring closer to the right edge */
-        font-size: 0.9rem; /* Smaller font size */
-        padding: 8px 12px; /* Smaller padding */
+        top: 30%;
+        right: 60px;
+        font-size: 0.9rem; 
+        padding: 8px 12px; 
     }
 }
 
 @media (max-width: 390px) {
     /* Further adjustments for very small screens (e.g., iPhone 12) */
     .menu-btn {
-        right: 10px; /* Move button even closer to the right edge */
-        top: 50%; /* Vertically center */
-        font-size: 1.2rem; /* Slightly bigger font size for smaller screens */
-        padding: 6px 10px; /* Adjust padding */
+        right: 10px; 
+        top: 50%; 
+        font-size: 1.2rem; 
+        padding: 6px 10px; 
     }
 }
 
 /* Notice Container Styles */
 .notice-container {
-    background-color: #ffffff;
+    background: rgba(255, 255, 255, 0.95);
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
@@ -263,6 +265,7 @@ footer {
     max-width: 600px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    color: #333;
 }
 
 .notice-container h3 {
